@@ -21,5 +21,11 @@
 ![image](https://github.com/hanjianqiao/qt-uri-scheme-handler/assets/7146341/11f25486-749c-47c0-8610-8423c2cf0a34)
 
 ## API说明
-* `static Result setUriProtocolHandler(const QString &displayName, const QString &URIScheme);`
-* `static Result removeUriProtocolHandler(const QString &URIScheme);`
+
+```
+// 注册handler。参考了MSDN的说明，但是其中displayName好像没起作用（感觉应该是浏览器弹出提示框显示的名称，但实际显示的还是exe文件名，在win11、chrome下）。
+static Result setUriProtocolHandler(const QString &displayName, const QString &URIScheme);
+
+// 取消handler。删除注册表。
+static Result removeUriProtocolHandler(const QString &URIScheme);
+```
